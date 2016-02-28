@@ -6,7 +6,7 @@ module LoanCalculator
     end
 
     def mounth_amount_info
-      "月还款金额 #{month_amount.round(2)} 元"
+      "月还款金额：#{month_amount.round(2)} 元"
     end
 
     def total_amount

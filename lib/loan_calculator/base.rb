@@ -11,6 +11,11 @@ module LoanCalculator
     #   year 贷款年限，如 5 表示 20 年折 240 个月
     #   rate 贷款利率，如 4.9 表示利率为  4.9%
     # 初始化后直接执行计算，可以通过方法获取各个数据，可以通过 display 打印完整信息
+    # 可获取信息包括
+    #   month_amount
+    #   total_amount
+    #   total_interest
+    #   year_rate
     #
     def initialize(total, year, rate)
       @total = total * 10000.0
@@ -49,14 +54,14 @@ module LoanCalculator
     # 显示计算结果
     def display
       puts "-" * 80
-      puts title
-      puts "贷款金额 #{@total} 元"
-      puts "贷款期限 #{@month} 个月"
-      puts "年利率 #{(@year_rate * 100).round(4)}%"
-      puts "月利率 #{(@month_rate * 100).round(4)}%"
+      puts "#{title}贷款计算结果"
+      puts "贷款金额：#{@total} 元"
+      puts "贷款期限：#{@month} 个月"
+      puts "年利率：#{(@year_rate * 100).round(4)}%"
+      puts "月利率：#{(@month_rate * 100).round(4)}%"
       puts mounth_amount_info
-      puts "总还款金额 #{total_amount.round(2)} 元"
-      puts "总利息 #{total_interest.round(2)} 元"
+      puts "总还款金额：#{total_amount.round(2)} 元"
+      puts "总利息：#{total_interest.round(2)} 元"
       puts "-" * 80
     end
 

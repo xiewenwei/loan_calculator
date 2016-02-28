@@ -1,15 +1,13 @@
 # LoanCalculator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/loan_calculator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+LoanCalculator 是一个简单小型的房贷计算器，提供等额本息还款计算和等额本金还款计算，别让中介和银行把你蒙了。
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'loan_calculator'
+gem 'loan_calculator', git: 'https://github.com/xiewnewei/loan_calculator.git'
 ```
 
 And then execute:
@@ -22,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+  # 贷款 100 万，20 年，利率 4.9%，等额本息还款
+  tool = LoanCalculator.get(100, 20, 4.9)
+  # 显示完整信息
+  tool.display
+  # 打印每月还款
+  puts tool.month_amount
+
+  # 贷款 100 万，20 年，利率 4.9%，等额本金还款
+  tool = LoanCalculator.get(100, 20, 4.9, :same_capital)
+  # 显示完整信息
+  tool.display
+  # 打印首月还款
+  puts tool.month_amount
+```
 
 ## Development
 
@@ -32,5 +44,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/loan_calculator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/xiewenwei/loan_calculator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
